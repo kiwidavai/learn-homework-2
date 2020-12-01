@@ -12,11 +12,16 @@
 """
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    with open('referat.txt', 'r', encoding='utf-8') as referat:
+        context = referat.read()
+        print(len(context))
+        count = context.replace('\n',' ').split(' ')
+        print(len(count))
+        context_with_exclamation_mark = context.replace('.', '!')
+        # print(context_with_exclamation_mark)
+    with open('referat2.txt', 'w', encoding='utf-8') as referat2:
+        referat2.write(context_with_exclamation_mark)
+        
 
 if __name__ == "__main__":
     main()
